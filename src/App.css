@@ -22,6 +22,7 @@
   max-width: 500px;
   border-radius: 10px;
   padding: 20px 40px;
+  position: relative;
 }
 
 .advice {
@@ -74,7 +75,6 @@
 .button {
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: -45px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -85,6 +85,10 @@
   border: 0;
   cursor: pointer;
   transition: 0.3s linear all;
+  position: absolute;
+  bottom: -26px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .button:hover {
@@ -120,6 +124,42 @@
   100% {
     transform: translate(0, 0) rotate(0deg);
   }
+}
+
+.hearts {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.add-to-favourites-button {
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  color: hsl(150, 100%, 66%);
+}
+
+.favourites-button {
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  color: hsl(150, 100%, 66%);
+}
+
+.favourites-list {
+  height: 100vh;
+  background-color: hsl(218, 23%, 16%);
+}
+
+.heading-favourites-list {
+  color: rgb(134, 34, 34);
+}
+
+.text-favourites-list {
+  color: hsl(193, 38%, 86%);
 }
 
 @media (max-width: 375px) {
