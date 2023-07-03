@@ -162,7 +162,7 @@
   color: hsl(193, 38%, 86%);
 }
 
-@media (max-width: 375px) {
+@media (max-width: 475px) {
   .background {
     padding-left: 20px;
     padding-right: 20px;
