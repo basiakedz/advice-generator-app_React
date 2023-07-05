@@ -1,8 +1,13 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
-import { BiBookmarkHeart, BiHeart, BiSolidHeart } from "react-icons/bi";
-
+import {
+  BiBookmarkHeart,
+  BiHeart,
+  BiSolidHeart,
+  BiTrash,
+  BiX,
+} from "react-icons/bi";
 
 Modal.setAppElement("#root");
 
@@ -14,6 +19,7 @@ function App() {
     adviceNumber,
     favourites,
     addToFavourites,
+    removeFromFavourites,
     isInFavourites,
   } = useFetchData();
 
@@ -27,7 +33,7 @@ function App() {
         <span id="advice" className="advice">
           ADVICE #{adviceNumber}
         </span>
-        <span id="sentence" className="sentence">
+        <span id="quote" className="quote">
           “{advice}”
         </span>
         <div className="line">
@@ -53,13 +59,22 @@ function App() {
         </button>
         <div className="hearts">
           <button
-            className="add-to-favourites-button"
-            id="add-to-favourites-button"
-            onClick={addToFavourites}
+            className="add-to-favourite-button"
+            id="add-to-favourite-button"
+            onClick={() => {
+              if (isInFavourites(advice)) {
+                removeFromFavourites(advice);
+              } else {
+                addToFavourites(advice);
+              }
+            }}
           >
             {isInFavourites(advice) ? <BiSolidHeart /> : <BiHeart />}
           </button>
-          <ModalButton favourites={favourites} />
+          <ModalButton
+            favourites={favourites}
+            removeFromFavourites={removeFromFavourites}
+          />
         </div>
       </div>
     </div>
@@ -102,6 +117,13 @@ function useFetchData() {
     }
   };
 
+  const removeFromFavourites = (advice) => {
+    const updatedFavourites = favourites.filter(
+      (favourite) => favourite !== advice
+    );
+    setFavourites(updatedFavourites);
+  };
+
   const isInFavourites = (advice) => {
     return favourites.includes(advice);
   };
@@ -113,11 +135,12 @@ function useFetchData() {
     adviceNumber,
     favourites,
     addToFavourites,
+    removeFromFavourites,
     isInFavourites,
   };
 }
 
-function ModalButton({ favourites }) {
+function ModalButton({ favourites, removeFromFavourites }) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const openModal = () => {
@@ -128,38 +151,37 @@ function ModalButton({ favourites }) {
     setModalIsOpen(false);
   };
 
-  // const isInFavourites = (advice) => {
-  //   return favourites.includes(advice);
-  // };
-
   return (
     <>
-      <button className="favourites-button" onClick={openModal}>
+      <button className="favourite-button" onClick={openModal}>
         <BiBookmarkHeart />
       </button>
       <Modal
         isOpen={modalIsOpen}
-        onRequestClose={closeModal}
         contentLabel="Example Modal"
+        className="modal"
       >
-        <div className="favourites-list">
-          <h2 className="heading-favourites-list">Favourite sentences</h2>
+        <div className="favourite-list">
+          <button className="cross-button" onClick={() => closeModal()}>
+            <BiX className="cross" />
+          </button>
+          <h2 className="heading-favourite-list">Favourite quotes</h2>
           {favourites.length === 0 ? (
-            <p className="text-favourites-list">
-              No favourites added. Add sentences to favourite list so you can
-              come back to them anytime you want{" "}
-              <BiSolidHeart />
+            <p className="no-favourite-quotes">
+              No favourites added. Add quotes to favourite list so you can come
+              back to them anytime you want <BiSolidHeart />
             </p>
           ) : (
             <ul>
               {favourites.map((favourite, index) => (
-                <li key={index}>
+                <li className="favourite-quotes" key={index}>
                   {favourite}
-                  {/* {isInFavourites(favourite) ? (
-                    <FaHeartCircleMinus />
-                  ) : ( 
-                    <FaHeartCirclePlus />
-                  )}  */}
+                  <button
+                    className="trash-button"
+                    onClick={() => removeFromFavourites(favourite)}
+                  >
+                    <BiTrash className="trash" />
+                  </button>
                 </li>
               ))}
             </ul>

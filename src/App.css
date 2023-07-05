@@ -33,7 +33,7 @@
   letter-spacing: 3px;
 }
 
-.sentence {
+.quote {
   display: block;
   font-size: 28px;
   color: hsl(193, 38%, 86%);
@@ -135,31 +135,69 @@
   bottom: 0;
 }
 
-.add-to-favourites-button {
+.add-to-favourite-button {
   background-color: transparent;
   border: none;
   font-size: 30px;
   color: hsl(150, 100%, 66%);
 }
 
-.favourites-button {
+.favourite-button {
   background-color: transparent;
   border: none;
   font-size: 30px;
   color: hsl(150, 100%, 66%);
 }
 
-.favourites-list {
+.modal {
+  position: absolute;
+  inset: 20%;
+  background: hsl(218, 23%, 16%);
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+}
+
+.favourite-list {
   height: 100vh;
   background-color: hsl(218, 23%, 16%);
 }
 
-.heading-favourites-list {
-  color: rgb(134, 34, 34);
+.cross-button {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  right: 15px;
+  top: 15px;
 }
 
-.text-favourites-list {
+.cross {
+  font-size: 30px;
+  color: hsl(150, 100%, 66%);
+}
+
+.heading-favourite-list {
+  color: hsl(150, 100%, 66%);
+}
+
+.no-favourite-quotes {
   color: hsl(193, 38%, 86%);
+}
+
+.favourite-quotes {
+  color: hsl(193, 38%, 86%);
+  margin-bottom: 10px;
+}
+
+.trash-button {
+  background-color: transparent;
+  border: none;
+}
+
+.trash {
+  font-size: 20px;
+  color: hsl(150, 100%, 66%);
 }
 
 @media (max-width: 475px) {
@@ -184,7 +222,7 @@
   .button {
     width: 65px;
     height: 65px;
-    margin-bottom: -50px;
+    margin-bottom: -5px;
   }
 
   .dice {
