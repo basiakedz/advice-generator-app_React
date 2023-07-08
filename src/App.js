@@ -10,6 +10,7 @@ import {
 } from "react-icons/bi";
 
 Modal.setAppElement("#root");
+Modal.defaultStyles.overlay.backgroundColor = "rgba(255, 255, 255, 0.2)";
 
 function App() {
   const {
@@ -160,9 +161,11 @@ function ModalButton({ favourites, removeFromFavourites }) {
         isOpen={modalIsOpen}
         contentLabel="Example Modal"
         className="modal"
+        shouldCloseOnEsc={true}
+        onRequestClose={closeModal}
       >
         <div className="favourite-list">
-          <button className="cross-button" onClick={() => closeModal()}>
+          <button className="cross-button" onClick={closeModal}>
             <BiX />
           </button>
           <h2 className="heading-favourite-list">Favourite quotes</h2>

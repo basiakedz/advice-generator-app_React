@@ -204,13 +204,14 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+  outline-color: hsl(218, 23%, 16%);
 }
 
 .trash {
-  font-size: 18px;
+  font-size: 16px;
   color: hsl(150, 100%, 66%);
   vertical-align: middle;
-  margin-bottom: 7px;
+  margin-bottom: 5px;
 }
 
 @media (max-width: 475px) {
