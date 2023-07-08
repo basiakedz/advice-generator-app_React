@@ -163,7 +163,7 @@ function ModalButton({ favourites, removeFromFavourites }) {
       >
         <div className="favourite-list">
           <button className="cross-button" onClick={() => closeModal()}>
-            <BiX className="cross" />
+            <BiX />
           </button>
           <h2 className="heading-favourite-list">Favourite quotes</h2>
           {favourites.length === 0 ? (

@@ -89,6 +89,7 @@
   bottom: -26px;
   left: 50%;
   transform: translateX(-50%);
+  outline-color: hsl(218, 23%, 16%);
 }
 
 .button:hover {
@@ -140,6 +141,8 @@
   border: none;
   font-size: 30px;
   color: hsl(150, 100%, 66%);
+  cursor: pointer;
+  outline-color: hsl(218, 23%, 16%);
 }
 
 .favourite-button {
@@ -147,11 +150,18 @@
   border: none;
   font-size: 30px;
   color: hsl(150, 100%, 66%);
+  cursor: pointer;
+  outline-color: hsl(218, 23%, 16%);
 }
 
 .modal {
-  position: absolute;
-  inset: 20%;
+  box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 500px;
   background: hsl(218, 23%, 16%);
   overflow: auto;
   border-radius: 4px;
@@ -170,11 +180,10 @@
   position: absolute;
   right: 15px;
   top: 15px;
-}
-
-.cross {
+  cursor: pointer;
   font-size: 30px;
   color: hsl(150, 100%, 66%);
+  outline-color: hsl(218, 23%, 16%);
 }
 
 .heading-favourite-list {
@@ -188,16 +197,20 @@
 .favourite-quotes {
   color: hsl(193, 38%, 86%);
   margin-bottom: 10px;
+  line-height: 1.5;
 }
 
 .trash-button {
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 
 .trash {
-  font-size: 20px;
+  font-size: 18px;
   color: hsl(150, 100%, 66%);
+  vertical-align: middle;
+  margin-bottom: 7px;
 }
 
 @media (max-width: 475px) {
