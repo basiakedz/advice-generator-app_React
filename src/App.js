@@ -88,6 +88,13 @@ function useFetchData() {
   const [isLoading, setIsLoading] = useState(true);
   const [favourites, setFavourites] = useState([]);
 
+  useEffect(() => {
+    const existingFavourites = localStorage.getItem("favourites");
+    if (existingFavourites) {
+      setFavourites(JSON.parse(existingFavourites));
+    }
+  }, []);
+
   const fetchData = () => {
     console.log("FETCH DATA");
     setIsLoading(true);
@@ -112,9 +119,11 @@ function useFetchData() {
       });
   };
 
-  const addToFavourites = () => {
+  const addToFavourites = (advice) => {
     if (!favourites.includes(advice)) {
-      setFavourites([...favourites, advice]);
+      const updatedFavourites = [...favourites, advice];
+      setFavourites(updatedFavourites);
+      localStorage.setItem("favourites", JSON.stringify(updatedFavourites));
     }
   };
 
@@ -123,6 +132,7 @@ function useFetchData() {
       (favourite) => favourite !== advice
     );
     setFavourites(updatedFavourites);
+    localStorage.setItem("favourites", JSON.stringify(updatedFavourites));
   };
 
   const isInFavourites = (advice) => {
