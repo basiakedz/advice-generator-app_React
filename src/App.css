@@ -193,6 +193,18 @@
   font-size: 30px;
   color: hsl(150, 100%, 66%);
   outline-color: hsl(218, 23%, 16%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  width: 35px;
+  padding: 0;
+  transition: 0.2s linear all;
+}
+
+.cross-button:hover {
+  background-color: rgba(0, 255, 128, 30%);
 }
 
 .heading-favourite-list {
