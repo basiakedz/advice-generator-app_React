@@ -134,6 +134,7 @@
   position: absolute;
   right: 0;
   bottom: 0;
+  padding: 0 10px;
 }
 
 .add-to-favourite-button {
@@ -143,6 +144,8 @@
   color: hsl(150, 100%, 66%);
   cursor: pointer;
   outline-color: hsl(218, 23%, 16%);
+  padding: 0;
+  margin-right: 10px;
 }
 
 .favourite-button {
@@ -152,6 +155,7 @@
   color: hsl(150, 100%, 66%);
   cursor: pointer;
   outline-color: hsl(218, 23%, 16%);
+  padding: 0;
 }
 
 .modal {
