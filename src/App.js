@@ -174,18 +174,21 @@ function ModalButton({ favourites, removeFromFavourites }) {
         shouldCloseOnEsc={true}
         onRequestClose={closeModal}
       >
-        <div className="favourite-list">
-          <button className="cross-button" onClick={closeModal}>
-            <BiX />
-          </button>
-          <h2 className="heading-favourite-list">Favourite quotes</h2>
+        <div className="favourite-list__container">
+          <div>
+            <button className="cross-button" onClick={closeModal}>
+              <BiX />
+            </button>
+            <h2 className="heading-favourite-list">Favourite quotes</h2>
+          </div>
+
           {favourites.length === 0 ? (
             <p className="no-favourite-quotes">
               No favourites added. Add quotes to favourite list so you can come
               back to them anytime you want <BiSolidHeart />
             </p>
           ) : (
-            <ul>
+            <ul className="favourite-list">
               {favourites.map((favourite, index) => (
                 <li className="favourite-quotes" key={index}>
                   {favourite}

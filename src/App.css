@@ -169,9 +169,18 @@
   padding: 20px;
 }
 
-.favourite-list {
-  height: 100vh;
+.favourite-list__container {
   background-color: hsl(218, 23%, 16%);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 5px;
+  overflow-y: auto;
+}
+
+.favourite-list {
+  flex: 1;
+  overflow-y: auto;
 }
 
 .cross-button {
