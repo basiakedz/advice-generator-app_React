@@ -31,19 +31,19 @@ function App() {
   return (
     <div className="background">
       <div className="card">
-        <span id="advice" className="advice">
+        <span id="advice" className="card__advice">
           ADVICE #{adviceNumber}
         </span>
-        <span id="quote" className="quote">
+        <span id="quote" className="card__quote">
           “{advice}”
         </span>
-        <div className="line">
-          <span className="line-horizontally"></span>
-          <div className="main-line-vertically">
-            <span className="line-vertically"></span>
-            <span className="line-vertically"></span>
+        <div className="card__line">
+          <span className="card__line-horizontally"></span>
+          <div className="card__main-line-vertically">
+            <span className="card__line-vertically"></span>
+            <span className="card__line-vertically"></span>
           </div>
-          <span className="line-horizontally"></span>
+          <span className="card__line-horizontally"></span>
         </div>
 
         <button
@@ -53,15 +53,15 @@ function App() {
           disabled={isLoading}
         >
           <img
-            className={`dice ${isLoading ? "loading" : ""}`}
+            className={`button__dice ${isLoading ? "button__loading" : ""}`}
             src="/icon-dice.svg"
             alt="Dice"
           />
         </button>
-        <div className="hearts">
+        <div className="favourites">
           <button
-            className="add-to-favourite-button"
-            id="add-to-favourite-button"
+            className="favourites__add-to-favourites-button"
+            id="add-to-favourites-button"
             onClick={() => {
               if (isInFavourites(advice)) {
                 removeFromFavourites(advice);
@@ -164,7 +164,10 @@ function ModalButton({ favourites, removeFromFavourites }) {
 
   return (
     <>
-      <button className="favourite-button" onClick={openModal}>
+      <button
+        className="favourites__saved-favourites-button"
+        onClick={openModal}
+      >
         <BiBookmarkHeart />
       </button>
       <Modal
@@ -176,27 +179,27 @@ function ModalButton({ favourites, removeFromFavourites }) {
       >
         <div className="favourite-list__container">
           <div>
-            <button className="cross-button" onClick={closeModal}>
+            <button className="modal__close-button" onClick={closeModal}>
               <BiX />
             </button>
-            <h2 className="heading-favourite-list">Favourite quotes</h2>
+            <h2 className="favourite-list__heading">Favourite quotes</h2>
           </div>
 
           {favourites.length === 0 ? (
-            <p className="no-favourite-quotes">
+            <p className="favourite-list__empty">
               No favourites added. Add quotes to favourite list so you can come
               back to them anytime you want <BiSolidHeart />
             </p>
           ) : (
             <ul className="favourite-list">
               {favourites.map((favourite, index) => (
-                <li className="favourite-quotes" key={index}>
+                <li className="favourite-list__quotes" key={index}>
                   {favourite}
                   <button
-                    className="trash-button"
+                    className="favourite-list__delete-button"
                     onClick={() => removeFromFavourites(favourite)}
                   >
-                    <BiTrash className="trash" />
+                    <BiTrash className="favourite-list__delete-icon" />
                   </button>
                 </li>
               ))}

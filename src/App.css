@@ -25,7 +25,7 @@
   position: relative;
 }
 
-.advice {
+.card__advice {
   display: block;
   padding-top: 20px;
   font-size: 12px;
@@ -33,7 +33,7 @@
   letter-spacing: 3px;
 }
 
-.quote {
+.card__quote {
   display: block;
   font-size: 28px;
   color: hsl(193, 38%, 86%);
@@ -42,28 +42,28 @@
   line-height: 1.2;
 }
 
-.line {
+.card__line {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 15px;
 }
 
-.line-horizontally {
+.card__line-horizontally {
   display: inline-block;
   width: 100%;
   height: 1px;
   background-color: hsl(217, 19%, 38%);
 }
 
-.main-line-vertically {
+.card__main-line-vertically {
   padding: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.line-vertically {
+.card__line-vertically {
   margin: 0 4px;
   display: inline-block;
   width: 6px;
@@ -100,12 +100,12 @@
   cursor: not-allowed;
 }
 
-.dice {
+.button__dice {
   width: 20px;
   height: 20px;
 }
 
-.loading {
+.button__loading {
   animation: tilt-n-move-shaking 0.25s infinite;
 }
 
@@ -127,7 +127,7 @@
   }
 }
 
-.hearts {
+.favourites {
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -137,7 +137,7 @@
   padding: 0 10px;
 }
 
-.add-to-favourite-button {
+.favourites__add-to-favourites-button {
   background-color: transparent;
   border: none;
   font-size: 30px;
@@ -148,7 +148,7 @@
   margin-right: 10px;
 }
 
-.favourite-button {
+.favourites__saved-favourites-button {
   background-color: transparent;
   border: none;
   font-size: 30px;
@@ -187,7 +187,7 @@
   overflow-y: auto;
 }
 
-.cross-button {
+.modal__close-button {
   background-color: transparent;
   border: none;
   position: absolute;
@@ -207,32 +207,32 @@
   transition: 0.2s linear all;
 }
 
-.cross-button:hover {
+.modal__close-button:hover {
   background-color: rgba(0, 255, 128, 30%);
 }
 
-.heading-favourite-list {
+.favourite-list__heading {
   color: hsl(150, 100%, 66%);
 }
 
-.no-favourite-quotes {
+.favourite-list__empty {
   color: hsl(193, 38%, 86%);
 }
 
-.favourite-quotes {
+.favourite-list__quotes {
   color: hsl(193, 38%, 86%);
   margin-bottom: 10px;
   line-height: 1.5;
 }
 
-.trash-button {
+.favourite-list__delete-button {
   background-color: transparent;
   border: none;
   cursor: pointer;
   outline-color: hsl(218, 23%, 16%);
 }
 
-.trash {
+.favourite-list__delete-icon {
   font-size: 16px;
   color: hsl(150, 100%, 66%);
   vertical-align: middle;
@@ -251,7 +251,7 @@
     padding: 20px 15px;
   }
 
-  .sentence {
+  .card__quote {
     margin-bottom: 25px;
     margin-top: 20px;
     font-size: 25px;
@@ -264,7 +264,7 @@
     margin-bottom: -5px;
   }
 
-  .dice {
+  .button__dice {
     width: 25px;
     height: 25px;
   }
