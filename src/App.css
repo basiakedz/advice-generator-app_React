@@ -219,6 +219,8 @@
 
 .favourite-list__empty {
   color: hsl(193, 38%, 86%);
+  line-height: 1.5;
+  font-size: 18px;
 }
 
 .favourite-list__quotes {
