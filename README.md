@@ -18,6 +18,8 @@ Users can generate a new piece of advice by clicking on the dice icon and save t
 - JavaScript
 - [React](https://reactjs.org/) - JS library
 
+![App Screenshot](./public/app-screenshot.png)
+
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
